@@ -5,10 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EV Road Tax Calculator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        .container { max-width: 600px; margin: 0 auto; }
+        body { font-family: 'Open Sans', Arial, sans-serif; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
         .calculator { margin-top: 20px; }
+        label, input[type=number], input[type=submit] { 
+            display: block; 
+            width: 100%; 
+            margin-bottom: 10px; 
+        }
+        input[type=number] { padding: 10px; font-size: 16px; }
+        input[type=submit] { 
+            padding: 10px; 
+            font-size: 16px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        }
+        input[type=submit]:hover { background-color: #0056b3; }
     </style>
 </head>
 <body>
