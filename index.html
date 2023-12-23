@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Road Tax Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .calculator { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>EV Road Tax Calculator</h1>
+    <p>This calculator is based on the proposed road tax structure for electric vehicles (EVs) in Malaysia. The structure is designed to promote the adoption of EVs by ensuring road tax rates are competitive with traditional vehicles.</p>
+    <ul>
+        <li><strong>Budget Cars (0-200 kW)</strong>: Base rate of RM 50 with a progressive rate of RM 0.50 per kW above the base.</li>
+        <li><strong>Normal Cars (200-300 kW)</strong>: Base rate of RM 200 with a progressive rate of RM 2.00 per kW above the base.</li>
+        <li><strong>Luxury Cars (300+ kW)</strong>: Base rate of RM 500 with a progressive rate of RM 5.00 per kW above the base.</li>
+    </ul>
+
+    <div class="calculator">
+        <h2>Calculate Your Road Tax</h2>
+        <form id="taxCalculator">
+            <label for="power">Enter Motor Power (kW):</label><br>
+            <input type="number" id="power" name="power" required><br><br>
+            <input type="submit" value="Calculate">
+        </form>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        document.getElementById('taxCalculator').onsubmit = function(event) {
+            event.preventDefault();
+            
+            const power = parseFloat(document.getElementById('power').value);
+            let tax;
+            
+            if (power <= 200) {
+                tax = 50 + (0.5 * (power - 0));
+            } else if (power <= 300) {
+                tax = 200 + (2.0 * (power - 200));
+            } else {
+                tax = 500 + (5.0 * (power - 300));
+            }
+
+            document.getElementById('result').innerText = 'Estimated Road Tax: RM ' + tax.toFixed(2);
+        };
+    </script>
+</div>
+
+</body>
